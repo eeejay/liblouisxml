@@ -1,0 +1,2 @@
+antiword -x db $1 |~/xml2brl >$2
+

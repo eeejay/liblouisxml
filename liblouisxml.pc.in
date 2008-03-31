@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+tablesdir=${prefix}/share/liblouisxml/lbx_files
+
+Name: liblouisxml
+Description: a braille XML transcriber
+Version: @VERSION@
+Requires: liblouis
+Libs: -L${libdir} -llouisxml
+Cflags: -I${includedir}/liblouisxml

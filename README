@@ -1,0 +1,93 @@
+liblouisxml REQUIRES the latest version of liblouis
+
+DOCUMENTATION
+
+For documentation, see liblouisxml-guide.html or liblouisxml-guide.txt . 
+These are in the docs directory. For an example of a configuration file,
+see default.cfg and canonical.cfg . For an example of a semantics-action
+file, see dtbook3.sem . For examples of translation tables, see
+en-us-g2.ctb en-us-g1.ctb chardefs.cti nemeth.ctb and whatever other
+files they may include. These are all in the lbx_files directory.
+
+INSTALLATION
+
+First obtain the latest version of liblouis and compile it. Before 
+compiling, you should chose between 16- and 32-bit Unicode, as described 
+in the README file and the documentation.
+If you chose 32-bit Unicode, you must make the corresponding choice in 
+the copy of liblouis.h in the liblouisxml src subdirectory.
+
+After unpacking the distribution tarball for liblouisxml go to the
+directory it creates, then go to the subdirectory src. In this
+subdirectory are files with names like linux-Makefile, macosx-Makefile,
+etc. You may need to edit these Makefiles for a successful installation,
+in particular the lines beginning with "includes" and "libs". You may
+also want to edit the file choices.h . This controls where liblouisxml
+and liblouis will look for configuration files, semantic-action files,
+and translation tables. As distributed, it will cause liblouisxml to
+look for the first configuration file in your current directory and for
+all other files in the lbx_files subdirectory of your home directory.
+
+Then type:
+
+make -f linux-Makefile 
+or
+make -f macosx-Makefile 
+or
+make -f FreeBSD-Makefile
+
+etc., according to your operating system.
+
+This will produce the library liblouisxml.so.1 (or liblouis.dylib for
+Mac) and the programs xml2brl, brl2xml, brl2brl, any2brl, mathml2brl and
+extext . Copy these programs to the bin directory in your home
+directory, or wherever it is convenient. Also copy the script msword2brl
+to this directory. Msword2brl requires the antiword program. Copy the
+liblouisxml.so.1 (or .dylib, etc.) into your home directory. Create the
+directory lbx_files in your home directory, and copy into it the
+contents of the directory lbx_files in the unpacked directory. Get root
+privileges and go to whereever your Unix flavor likes to keep libraries.
+On Redhat systems it is /usr/lib . In this directory type a command
+like:
+
+ln -s /home/myname/src/liblouisxml.so.1 liblouisxml.so
+
+(with appropriate changes for Mac) You may also need to run the ldconfig 
+command.
+
+Note that you also need the latest version of liblouis. A similar 
+installation procedure applies to it.
+
+RELEASE NOTES 
+
+mathml2brl is primarily for testing. Type mathml2brl -h to see usage
+information. 
+
+xml2brl is a full transcription program. Again, type xml2brl -h to see
+usage information. It will handle xml files from bookshare.org, docbook
+files, xhtml files and files saved as xml by Microsoft Word "right out
+of the box." 
+
+brl2xml is a back-translation program. It will produce the 
+back-translation in either html or text form according to the backFormat 
+setting in the configuration file.
+
+brl2brl first backtranslates a brf file and then retranslates it 
+according to the format specified in the configuration file.
+
+any2brl is used for poorly-formatted text or xml files. It makes 
+educated guesses on paragraph breaks which are often better than those 
+in the original.
+
+msword2brl takes a Microsoft Word file and produces a well-formatted 
+braille file.
+
+extext is like any2brl except that it produces a text file and it takes
+input from the standard input unit and delivers output to the standard
+output unit. 
+
+The standard GNU "configure, make, make install" procedure will be added
+when the pressure of development becomes somewhat less. A Mac GUI
+application is available and a similar Windows application is in the
+works.
+
