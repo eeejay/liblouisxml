@@ -1,5 +1,7 @@
 INCLUDES =		\
-	-I$(top_srcdir)
+	-I$(top_srcdir) \
+	-DLIBLOUISXML_LBX_DIR=\"$(sysconfdir)/liblouisxml/lbx_files/\" \
+	-DLIBLOUIS_TABLES_PATH=\"@LIBLOUIS_TABLES_PATH@/\"
 
 liblouisxmlincludedir = $(includedir)/liblouisxml
 
@@ -41,4 +43,4 @@ liblouisxml_la_SOURCES =			\
 nodist_liblouisxml_la_SOURCES =			\
 		choices.h
 
-EXTRA_DIST = make_sem_names.c choices.h.in
+EXTRA_DIST = choices.h.in

@@ -1,4 +1,4 @@
-lbx_filesdir = $(LIBLOUISXML_LBX_DIR)
+lbx_filesdir = $(sysconfdir)/liblouisxml/lbx_files
 
 lbx_files_DATA = \
 	article.sem \
@@ -54,5 +54,4 @@ lbx_files_DATA = \
 	w_wordDocument.sem
 
 EXTRA_DIST = \
-	$(lbx_files_DATA) \
-	makenemethdefs.c
+	$(lbx_files_DATA)

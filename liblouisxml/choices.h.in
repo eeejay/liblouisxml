@@ -22,9 +22,7 @@ path and then on the developer path. Temporary files and log files are
 placed on the user path. 
 */
 
-#define LIBLOUIS_TABLES_PATH "@LIBLOUIS_TABLES_PATH@/"
-
-#define DEVELOPERPATH "@LIBLOUISXML_LBX_DIR@/"
+#define DEVELOPERPATH LIBLOUISXML_LBX_DIR
 #undef USERPATH
 // #define USERPATH ""
 // #undef USERISCONFIG
