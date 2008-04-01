@@ -41,4 +41,4 @@ liblouisxml_la_SOURCES =			\
 nodist_liblouisxml_la_SOURCES =			\
 		choices.h
 
-EXTRA_DIST = make_sem_names.c
+EXTRA_DIST = make_sem_names.c choices.h.in

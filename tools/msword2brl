@@ -1,2 +1,3 @@
-antiword -x db $1 |~/xml2brl >$2
+#!/bin/sh
+antiword -x db $1 | $(dirname $0)/xml2brl >$2
 

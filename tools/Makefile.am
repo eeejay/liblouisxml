@@ -32,4 +32,3 @@ mathml2brl_SOURCES = mathml2brl.c
 txt2xml_SOURCES = txt2xml.c
 
 xml2brl_SOURCES = xml2brl.c
-
