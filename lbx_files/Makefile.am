@@ -1,55 +1,28 @@
-lbx_filesdir = $(datadir)/liblouisxml/tables
+lbx_filesdir = $(LIBLOUISXML_LBX_DIR)
 
 lbx_files_DATA = \
-	ar-ar-g1.utb \
 	article.sem \
 	book.sem \
 	canonical.cfg \
 	chapter.sem \
-	chardefs.cti \
 	compbook.cfg \
-	corrections.ctb \
-	countries.cti \
-	cy-cy-g1.utb \
 	cy-cy-g2.ctb \
 	Cz-Cz-g1.utb \
 	dansk.dis \
 	dansk.utb \
 	de-de.dis \
-	de-de-g0.utb \
-	de-de-g1.ctb \
-	de-de-g2.ctb \
 	default.cfg \
 	document.sem \
 	dtbook3.sem \
-	edittable.ctb \
 	embosser.cfg \
-	en-gb-g1.utb \
-	en-GB-g2.ctb \
-	en-us-comp6.ctb \
 	en-us-comp8.ctb \
 	en-us-compbrl.ctb \
 	en-us-g1.ctb \
 	en-us-g1.utb \
-	en-us-g2.ctb \
-	en-us-interline.ctb \
-	en-us-mathtext.ctb \
-	Es-Es-g1.utb \
-	eurodefs.cti \
 	file-list \
-	fr-ca-g1.utb \
-	Fr-Ca-g2.ctb \
-	fr-fr-g1.utb \
-	Fr-Fr-g2.ctb \
-	gr-bb.ctb \
 	greek-bible.cfg \
-	gr-gr-g1.utb \
 	gutbook.sem \
-	hi-in-g1.utb \
 	html.sem \
-	hyph_de_DE.dic \
-	hyph_en_US.dic \
-	hyph_es_ES.dic \
 	hyph_fr_FR.dic \
 	hyph_it_IT.dic \
 	hyph_nl_NL.dic \
@@ -61,28 +34,13 @@ lbx_files_DATA = \
 	Lv-Lv-g1.utb \
 	math.cfg \
 	math.sem \
-	nemeth.ctb \
-	nemethdefs.cti \
 	new_chardefs.cti \
-	nl-be-g1.utb \
-	Nl-Nl-g1.utb \
-	no-no.dis \
-	No-No-g0.utb \
-	No-No-g1.ctb \
-	No-No-g2.ctb \
-	No-No-g3.ctb \
 	paperless.cfg \
-	Pl-Pl-g1.utb \
 	preface.sem \
-	Pt-Pt-g1.utb \
 	README \
 	sample.sem \
 	sem-copyright \
-	se-se.dis \
-	Se-Se-g1.utb \
 	set.sem \
-	sk-sk-g1.utb \
-	sk-sk.utb \
 	sorted.book.sem \
 	sorted.ctb \
 	spanish.cfg \
@@ -90,13 +48,7 @@ lbx_files_DATA = \
 	test.cfg \
 	testhyph.cfg \
 	test.txt \
-	text_nabcc.dis \
 	ThML.sem \
-	UEBC-g1.utb \
-	UEBC-g2.ctb \
-	ukchardefs.cti \
-	unicodedefs.cti \
-	uni-text.dis \
 	usedtd.cfg \
 	wordDocument.sem \
 	w_wordDocument.sem

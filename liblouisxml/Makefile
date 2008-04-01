@@ -35,13 +35,13 @@ build_triplet = i686-pc-linux-gnu
 host_triplet = i686-pc-linux-gnu
 subdir = liblouisxml
 DIST_COMMON = $(liblouisxmlinclude_HEADERS) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in
+	$(srcdir)/Makefile.in $(srcdir)/choices.h.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = choices.h
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -65,7 +65,9 @@ am_liblouisxml_la_OBJECTS = liblouisxml_la-change_table.lo \
 	liblouisxml_la-transcribe_music.lo \
 	liblouisxml_la-transcribe_paragraph.lo \
 	liblouisxml_la-transcriber.lo
-liblouisxml_la_OBJECTS = $(am_liblouisxml_la_OBJECTS)
+nodist_liblouisxml_la_OBJECTS =
+liblouisxml_la_OBJECTS = $(am_liblouisxml_la_OBJECTS) \
+	$(nodist_liblouisxml_la_OBJECTS)
 liblouisxml_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(liblouisxml_la_CFLAGS) \
 	$(CFLAGS) $(liblouisxml_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -81,7 +83,7 @@ CCLD = $(CC)
 LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-SOURCES = $(liblouisxml_la_SOURCES)
+SOURCES = $(liblouisxml_la_SOURCES) $(nodist_liblouisxml_la_SOURCES)
 DIST_SOURCES = $(liblouisxml_la_SOURCES)
 liblouisxmlincludeHEADERS_INSTALL = $(INSTALL_HEADER)
 HEADERS = $(liblouisxmlinclude_HEADERS)
@@ -129,7 +131,9 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LDFLAGS = 
 LIBLOUISXML_AGE = 0
 LIBLOUISXML_CURRENT = 1
+LIBLOUISXML_LBX_DIR = /opt/gnome2/etc/liblouisxml/lbx_files
 LIBLOUISXML_REVISION = 0
+LIBLOUIS_TABLES_PATH = /opt/gnome2/share/liblouis/tables
 LIBOBJS = 
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
@@ -225,7 +229,6 @@ liblouisxml_la_LDFLAGS = \
 
 liblouisxml_la_SOURCES = \
 	change_table.c \
-	choices.h \
 	examine_document.c \
 	extext.c \
 	liblouisxml.c \
@@ -244,6 +247,9 @@ liblouisxml_la_SOURCES = \
 	transcribe_paragraph.c \
 	transcriber.c \
 	transcriber.h
+
+nodist_liblouisxml_la_SOURCES = \
+		choices.h
 
 EXTRA_DIST = make_sem_names.c
 all: all-am
@@ -279,6 +285,8 @@ $(top_srcdir)/configure: # $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(ACLOCAL_M4): # $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+choices.h: $(top_builddir)/config.status $(srcdir)/choices.h.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-libLTLIBRARIES: $(lib_LTLIBRARIES)
 	@$(NORMAL_INSTALL)
 	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(libdir)"

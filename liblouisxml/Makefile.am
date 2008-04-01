@@ -19,7 +19,6 @@ liblouisxml_la_LDFLAGS =	\
 
 liblouisxml_la_SOURCES =			\
 	change_table.c \
-	choices.h \
 	examine_document.c \
 	extext.c \
 	liblouisxml.c \
@@ -38,5 +37,8 @@ liblouisxml_la_SOURCES =			\
 	transcribe_paragraph.c \
 	transcriber.c \
 	transcriber.h
+
+nodist_liblouisxml_la_SOURCES =			\
+		choices.h
 
 EXTRA_DIST = make_sem_names.c
