@@ -102,7 +102,6 @@ find_file (const char *fileList, char *filePath)
   struct stat statInfo;
   char trialPath[MAXNAMELEN];
   int commaPos;			/*for file lists */
-  printf("Enter %s %s\n", fileList, filePath);
   filePath[0] = 0;
   for (commaPos = 0; fileList[commaPos] && fileList[commaPos] != ',';
        commaPos++);
@@ -126,7 +125,6 @@ find_file (const char *fileList, char *filePath)
     }
   strcpy (trialPath, LIBLOUIS_TABLES_PATH);
   strncat (trialPath, (char *) fileList, commaPos);
-  printf("liblouis table: %s\n", trialPath);
   if (stat (trialPath, &statInfo) != -1)
     {
       strcpy (filePath, LIBLOUIS_TABLES_PATH);
