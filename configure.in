@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(liblouisxml, 1.3.23)
+AC_INIT(liblouisxml, 0.0.1)
 AC_CONFIG_SRCDIR(liblouisxml.pc.in)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
