@@ -5,6 +5,7 @@ lbx_files_DATA = \
 	book.sem \
 	canonical.cfg \
 	chapter.sem \
+	default.cfg \
 	document.sem \
 	dtbook3.sem \
 	gutbook.sem \
