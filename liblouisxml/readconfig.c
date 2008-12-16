@@ -884,18 +884,7 @@ initConfigFiles (const char *fileList, char *fileName)
       break;
   strcpy (fileName, &configPath[k + 1]);
   configPath[++k] = 0;
-#ifdef USERISCONFIG
   strcpy (ud->user_path, configPath);
-#elif defined (USERPATH)
-  strcpy (ud->user_path, USERPATH);
-#else
-  if (!*configPath)
-    {
-      strcpy (configPath, getenv ("HOME"));
-      strcat (configPath, "/lbx_files/");
-    }
-  strcpy (ud->user_path, configPath);
-#endif
   if (logFileNamex)
     {
       strcpy (ud->contracted_table_name, ud->user_path);

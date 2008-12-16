@@ -57,7 +57,6 @@ bound by the terms of the GPL.
 #include "liblouisxml.h"
 #include "sem_enum.h"
 #include "transcriber.h"
-#include "choices.h"
 
 #ifdef WIN32
 #define strcasecmp _strnicmp

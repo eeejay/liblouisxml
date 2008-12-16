@@ -1,6 +1,6 @@
 INCLUDES =		\
 	-I$(top_srcdir) \
-	-DLIBLOUISXML_LBX_DIR=\"$(sysconfdir)/liblouisxml/lbx_files/\" \
+	-DDEVELOPERPATH=\"$(sysconfdir)/liblouisxml/lbx_files/\" \
 	-DLIBLOUIS_TABLES_PATH=\"@LIBLOUIS_TABLES_PATH@/\"
 
 liblouisxmlincludedir = $(includedir)/liblouisxml
@@ -40,7 +40,3 @@ liblouisxml_la_SOURCES =			\
 	transcriber.c \
 	transcriber.h
 
-nodist_liblouisxml_la_SOURCES =			\
-		choices.h
-
-EXTRA_DIST = choices.h.in

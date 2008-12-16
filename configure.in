@@ -43,7 +43,6 @@ Makefile
 doc/Makefile
 lbx_files/Makefile
 liblouisxml/Makefile
-liblouisxml/choices.h
 tools/Makefile
 liblouisxml.pc
 ])
